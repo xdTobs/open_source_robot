@@ -11,12 +11,12 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.listen()
     conn, addr = s.accept()
     with conn:
-        print(f"Connected by {addr}")
+        print("Connected by addr")
         while True:
             data = conn.recv(1024)
             if not data:
                 break
-            print(f"Received {data!r}")
+            print("Received data!r")
             if data == b'q':
                 break
             elif data == b'a':
